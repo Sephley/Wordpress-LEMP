@@ -1,5 +1,9 @@
 FROM ubuntu:latest
 
+# Stop all interactive prompts and set defaults
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=EU
+
 # install dependencies
 RUN apt update && \
     apt install -y nginx mysql-server php-fpm php-mysql
